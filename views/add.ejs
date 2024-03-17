@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .add-book-form {
+        text-align: center;
+      }
+
+      .add-book-form h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      .input-group input:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+
+      .input-group label {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        color: #999;
+        transition: top 0.3s ease, left 0.3s ease, color 0.3s ease;
+      }
+
+      .input-group input:focus ~ label,
+      .input-group input:not(:placeholder-shown) ~ label {
+        top: -15px;
+        left: 5px;
+        font-size: 12px;
+        color: #007bff;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="add-book-form" method="POST" action="/api/books">
+        <h2>Add Book</h2>
+        <div class="input-group">
+          <lablel> Title</lablel>
+          <input type="text" placeholder="name of the book" name="title" />
+        </div>
+        <div class="input-group">
+          <lablel> Author</lablel>
+          <input type="text" placeholder="nam of author" name="author" />
+        </div>
+        <div class="input-group">
+          <lablel> Genre</lablel>
+          <input type="text" placeholder="Science Fictioin" name="genre" />
+        </div>
+        <div class="input-group">
+          <lablel> Publisher</lablel>
+          <input type="text" placeholder="Publisher" name="publisher" />
+        </div>
+        <div class="input-group">
+          <lablel> Price</lablel>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            min="0"
+            step="0.01"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <lablel> Published Date</lablel>
+          <input type="text" placeholder="1845-12-12" name="publishDate" />
+        </div>
+        <button type="submit">Add Book</button>
+      </form>
+    </div>
+  </body>
+</html>
